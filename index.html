@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rohit Giri | Developer Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #050020;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .purple {
+            color: #a855f7;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 70px;
+            padding: 10px 20px;
+            background-color: #100d35;
+        }
+
+        .left {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        nav ul li a:hover {
+            color: #a855f7;
+        }
+
+        /* Home Section */
+        .firstSection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1120px;
+            min-height: 440px;
+            margin: 20px auto 0;
+            padding: 35px 20px;
+            gap: 45px;
+        }
+
+        .leftSection {
+            flex: 1;
+            font-size: 1.9rem;
+            line-height: 1.8;
+        }
+
+        #element {
+            color: #a855f7;
+            font-size: 1.9rem;
+            font-weight: 600;
+        }
+
+        .rightSection {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .rightSection img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        /* Common Section Headings */
+        .section-heading,
+        .skillsSection h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-description,
+        .skillsIntro {
+            color: #c9c5dd;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        /* Projects Section */
+        .secondSection {
+            max-width: 1120px;
+            width: calc(100% - 40px);
+            margin: 20px auto 70px;
+            padding: 20px 0;
+        }
+
+        .projectContainer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .projectCard {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 22px;
+            background-color: #100d35;
+            border: 1px solid #30245c;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .projectCard:hover {
+            transform: translateY(-5px);
+            border-color: #a855f7;
+        }
+
+        .projectStatus {
+            font-size: 0.75rem;
+            color: #d8b4fe;
+            background-color: #29194b;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
+
+        .projectCard h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .projectCard p {
+            color: #c9c5dd;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        /* Technology Tags */
+        .techStack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+
+        .techStack span {
+            color: #d8b4fe;
+            background-color: #29194b;
+            border: 1px solid #493174;
+            padding: 5px 9px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+        }
+
+        /* Project Buttons */
+        .projectLinks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .projectBtn {
+            display: inline-block;
+            padding: 9px 12px;
+            border: 1px solid #a855f7;
+            border-radius: 7px;
+            color: #e9d5ff;
+            font-size: 0.78rem;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .projectBtn:hover {
+            background-color: #a855f7;
+            color: white;
+        }
+
+        .projectBtn.primary {
+            background-color: #7e22ce;
+            color: white;
+        }
+
+        .projectBtn.primary:hover {
+            background-color: #9333ea;
+        }
+
+        /* About Section */
+        .aboutSection {
+            max-width: 1120px;
+            width: calc(100% - 40px);
+            margin: 0 auto 70px;
+            padding: 20px 0;
+        }
+
+        .aboutSection p {
+            color: #c9c5dd;
+            line-height: 1.9;
+            max-width: 750px;
+            margin-top: 15px;
+        }
+
+        /* Education Section */
+        .educationSection {
+            max-width: 1120px;
+            width: calc(100% - 40px);
+            margin: 0 auto 70px;
+            padding: 20px 0;
+        }
+
+        .educationCard {
+            max-width: 750px;
+            padding: 25px;
+            background-color: #100d35;
+            border: 1px solid #30245c;
+            border-left: 4px solid #a855f7;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .educationCard:hover {
+            border-color: #a855f7;
+            transform: translateY(-4px);
+        }
+
+        .educationCard h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .educationCard .institution {
+            color: #d8b4fe;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .educationCard p {
+            color: #c9c5dd;
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+
+        .educationStatus {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 5px 10px;
+            color: #d8b4fe;
+            background-color: #29194b;
+            border-radius: 6px;
+            font-size: 0.75rem;
+        }
+
+        /* Skills Section */
+        .skillsSection {
+            max-width: 1120px;
+            width: calc(100% - 40px);
+            margin: 0 auto 70px;
+            padding: 20px 0;
+        }
+
+        .skillsContainer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skillBox {
+            padding: 20px;
+            background-color: #100d35;
+            border: 1px solid #30245c;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .skillBox:hover {
+            border-color: #a855f7;
+            transform: translateY(-4px);
+        }
+
+        .skillBox h3 {
+            color: #c084fc;
+            margin-bottom: 5px;
+        }
+
+        .skillBox p {
+            color: #c9c5dd;
+            font-size: 0.85rem;
+        }
+
+        /* Contact Section */
+        .contactSection {
+            text-align: center;
+            padding: 45px 20px;
+            background-color: #100d35;
+        }
+
+        .contactSection p {
+            color: #c9c5dd;
+            margin: 12px 0;
+        }
+
+        .contactSection a {
+            color: #c084fc;
+            text-decoration: none;
+        }
+
+        .contactSection a:hover {
+            color: white;
+        }
+
+        /* Tablet */
+        @media (max-width: 800px) {
+
+            .leftSection,
+            #element {
+                font-size: 1.55rem;
+            }
+
+            .projectContainer {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 14px;
+                padding: 16px 12px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li a {
+                font-size: 0.78rem;
+            }
+
+            .firstSection {
+                flex-direction: column;
+                text-align: center;
+                min-height: auto;
+                padding: 35px 20px;
+                gap: 25px;
+            }
+
+            .leftSection,
+            #element {
+                font-size: 1.5rem;
+            }
+
+            .rightSection {
+                justify-content: center;
+            }
+
+            .rightSection img {
+                max-width: 300px;
+            }
+
+            .secondSection,
+            .aboutSection,
+            .educationSection,
+            .skillsSection {
+                width: calc(100% - 36px);
+            }
+
+            .section-heading,
+            .skillsSection h2 {
+                font-size: 1.7rem;
+            }
+
+            .projectContainer {
+                grid-template-columns: 1fr;
+            }
+
+            .skillsContainer {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .skillBox {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="left">Rohit's Portfolio</div>
+
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Home Section -->
+        <section class="firstSection" id="home">
+
+            <div class="leftSection">
+                <div>
+                    Hi, My name is <span class="purple">Rohit</span>
+                </div>
+
+                <div>and I am a passionate</div>
+
+                <div>
+                    <span id="element"></span>
+                </div>
+            </div>
+
+            <div class="rightSection">
+                <img src="bg.png" alt="Developer working at a computer">
+            </div>
+
+        </section>
+
+        <!-- Projects Section -->
+        <section class="secondSection" id="projects">
+
+            <h2 class="section-heading">
+                My <span class="purple">Projects</span>
+            </h2>
+
+            <p class="section-description">
+                A selection of projects I have completed or am currently developing.
+            </p>
+
+            <div class="projectContainer">
+
+                <article class="projectCard">
+                    <span class="projectStatus">Completed</span>
+                    <h3>PGLife</h3>
+
+                    <p>
+                        Student accommodation website featuring property listing
+                        and detail pages, JavaScript filtering, PHP signup/login/logout,
+                        dashboard work and MySQL integration.
+                    </p>
+
+                    <div class="techStack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                    </div>
+
+                    <div class="projectLinks">
+                        <a class="projectBtn primary" href="https://github.com/rohitgiri-creater" target="_blank"
+                            rel="noopener noreferrer">
+                            GitHub Profile ↗
+                        </a>
+                    </div>
+                </article>
+
+                <article class="projectCard">
+                    <span class="projectStatus">Live Demo</span>
+                    <h3>Placement Predictor</h3>
+
+                    <p>
+                        A Python-based machine-learning application for predicting
+                        student placement outcomes, presented through Streamlit.
+                    </p>
+
+                    <div class="techStack">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Scikit-learn</span>
+                        <span>Streamlit</span>
+                    </div>
+
+                    <div class="projectLinks">
+                        <a class="projectBtn primary" href="https://rohit-placement-predictor.streamlit.app/"
+                            target="_blank" rel="noopener noreferrer">
+                            Live Demo ↗
+                        </a>
+
+                        <a class="projectBtn" href="https://github.com/rohitgiri-creater/placement-predictor-system"
+                            target="_blank" rel="noopener noreferrer">
+                            Source Code ↗
+                        </a>
+                    </div>
+                </article>
+
+                <article class="projectCard">
+                    <span class="projectStatus">In Progress</span>
+                    <h3>CampusKart</h3>
+
+                    <p>
+                        A campus-focused reselling system. The backend is currently
+                        being developed using PHP and MySQL.
+                    </p>
+
+                    <div class="techStack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                    </div>
+
+                    <div class="projectLinks">
+                        <a class="projectBtn primary" href="https://github.com/rohitgiri-creater" target="_blank"
+                            rel="noopener noreferrer">
+                            GitHub Profile ↗
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="aboutSection" id="about">
+
+            <h2 class="section-heading">
+                About <span class="purple">Me</span>
+            </h2>
+
+            <p>
+                I am Rohit Giri, a BCA student at Galgotias University,
+                expected to graduate in 2027. I am interested in web and
+                backend development and learning through practical projects.
+                My current toolkit includes HTML, CSS, PHP, MySQL, Java and Python.
+            </p>
+
+        </section>
+
+        <!-- Education Section -->
+        <section class="educationSection" id="education">
+
+            <h2 class="section-heading">
+                My <span class="purple">Education</span>
+            </h2>
+
+            <p class="section-description">
+                My academic background and learning journey.
+            </p>
+
+            <div class="educationCard">
+
+                <h3>Bachelor of Computer Applications (BCA)</h3>
+
+                <p class="institution">Galgotias University</p>
+
+                <p>Currently in 3rd Year</p>
+
+                <p>Expected Graduation: 2027</p>
+
+                <p>
+                    Focus areas: Programming, Web Development,
+                    Database Management and Software Development.
+                </p>
+
+                <span class="educationStatus">Currently Pursuing</span>
+
+            </div>
+
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skillsSection" id="skills">
+
+            <h2>My <span class="purple">Skills</span></h2>
+
+            <p class="skillsIntro">
+                Technologies and programming languages I am learning and working with.
+            </p>
+
+            <div class="skillsContainer">
+
+                <div class="skillBox">
+                    <h3>HTML</h3>
+                    <p>Web Page Structure</p>
+                </div>
+
+                <div class="skillBox">
+                    <h3>CSS</h3>
+                    <p>Styling and Layout</p>
+                </div>
+
+                <div class="skillBox">
+                    <h3>PHP</h3>
+                    <p>Backend Development</p>
+                </div>
+
+                <div class="skillBox">
+                    <h3>MySQL</h3>
+                    <p>Database Management</p>
+                </div>
+
+                <div class="skillBox">
+                    <h3>Java</h3>
+                    <p>Programming</p>
+                </div>
+
+                <div class="skillBox">
+                    <h3>Python</h3>
+                    <p>Programming and ML Projects</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contactSection" id="contact">
+
+            <h2>Let's <span class="purple">Connect</span></h2>
+
+            <p>
+                Email:
+                <a href="mailto:rg342534@gmail.com">rg342534@gmail.com</a>
+            </p>
+
+            <p>
+                <a href="https://github.com/rohitgiri-creater" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+                &nbsp; | &nbsp;
+
+                <a href="https://www.linkedin.com/in/rohit-giri-0b51a0345/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Typing Animation -->
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+
+    <script>
+        const typed = new Typed('#element', {
+            strings: [
+                'Web Developer',
+                'Backend Developer',
+                'Python Programmer'
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 1200,
+            loop: true
+        });
+    </script>
+
+</body>
+
+</html>
